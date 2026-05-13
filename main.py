@@ -26,6 +26,6 @@ connection.login(user=MY_EMAIL, password=MY_PASSWORD)
 connection.sendmail(
     from_addr=MY_EMAIL,
     to_addrs="michael.bergman@katrineholm.se",
-    msg=f"Subject:Dagens citat\n\nHej Michael! Här kommer ett tänkvärt citat:\n{quote}".encode("utf-8")
+    msg=f"Subject:Dagens citat\n\nHej! Här är ett tänkvärt citat:\n\n{quote}".encode("utf-8")
 )
 connection.close()
