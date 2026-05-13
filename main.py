@@ -25,7 +25,7 @@ connection.starttls()
 connection.login(user=MY_EMAIL, password=MY_PASSWORD)
 connection.sendmail(
     from_addr=MY_EMAIL,
-    to_addrs="mickos939bot@yahoo.com",
-    msg=f"Subject:Dagens citat\n\n{quote}".encode("utf-8")
+    to_addrs="michael.bergman@katrineholm.se",
+    msg=f"Subject:Dagens citat\n\nHej Michael! Här kommer ett tänkvärt citat:\n{quote}".encode("utf-8")
 )
 connection.close()
