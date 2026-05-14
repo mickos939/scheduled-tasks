@@ -2,7 +2,6 @@
 # 2. Go to your email provider and make it allow less secure apps.
 # 3. Update the SMTP ADDRESS to match your email provider.
 
-
 import os
 import smtplib
 import datetime as dt
