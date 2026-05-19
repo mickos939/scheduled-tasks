@@ -13,11 +13,11 @@ MY_PASSWORD = os.environ.get("MY_PASSWORD")
 
 now = dt.datetime.now()
 weekday = now.weekday()
-#if weekday == 1:
-with open("quotes.txt") as quote_file:
-    all_quotes = quote_file.readlines()
-    quote = random.choice(all_quotes)
-print(quote)
+if weekday == 4:
+    with open("quotes.txt") as quote_file:
+        all_quotes = quote_file.readlines()
+        quote = random.choice(all_quotes)
+        print(quote)
 
 connection = smtplib.SMTP("smtp.gmail.com")
 connection.starttls()
