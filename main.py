@@ -13,18 +13,21 @@ MY_PASSWORD = os.environ.get("MY_PASSWORD")
 
 now = dt.datetime.now()
 weekday = now.weekday()
-if weekday == 4:
+if weekday == 0 or weekday == 4:
     with open("quotes.txt") as quote_file:
         all_quotes = quote_file.readlines()
         quote = random.choice(all_quotes)
-        print(quote)
+    print(quote)
 
-connection = smtplib.SMTP("smtp.gmail.com")
-connection.starttls()
-connection.login(user=MY_EMAIL, password=MY_PASSWORD)
-connection.sendmail(
-    from_addr=MY_EMAIL,
-    to_addrs="michael.bergman@katrineholm.se",
-    msg=f"Subject:Dagens citat\n\nHej! Här är ett tänkvärt citat:\n\n{quote}".encode("utf-8")
-)
-connection.close()
+    MY_EMAIL = "mickos939bot@gmail.com"
+    MY_PASSWORD = "yiynzdacjlvhejus"
+
+    connection = smtplib.SMTP("smtp.gmail.com")
+    connection.starttls()
+    connection.login(user=MY_EMAIL, password=MY_PASSWORD)
+    connection.sendmail(
+        from_addr=MY_EMAIL,
+        to_addrs="michael.bergman@katrineholm.se",
+        msg=f"Subject:Dagens citat\n\n{quote}".encode("utf-8")
+    )
+    connection.close()
